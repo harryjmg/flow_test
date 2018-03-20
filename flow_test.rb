@@ -41,7 +41,9 @@ begin
 	nouveau_temps = (3600 + rand(5400))
 	total = total + nouveau_temps
 	tableau_intervalles << nouveau_temps
-until total > 50400
+end until total > 50400
+
+send_msg(access_token, recipient, "Bonjour ici Alfred ! Je vais t'envoyer #{tableau_intervalles.length} messages aleatoirement dans la journée pour mesurer ton niveau de flow. Passe une bonne journée !")
 
 tableau_intervalles.each do |i|
 	sleep(i)
